@@ -1,0 +1,71 @@
+{
+  "name": "dsh-session-gallery",
+  "version": "0.1.0",
+  "description": "DSH plugin: right-sidebar image manager (session images, workbench, library) with built-in AI image generation.",
+  "type": "module",
+  "license": "MIT",
+  "author": "lalilulelo3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lalilulelo3/dsh-session-gallery.git"
+  },
+  "homepage": "https://github.com/lalilulelo3/dsh-session-gallery#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-plugins",
+    "deepseek-harness",
+    "gallery",
+    "image-viewer",
+    "image-generation",
+    "right-sidebar"
+  ],
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "external": [
+        "react",
+        "react/jsx-runtime"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@types/node": "^22.20.5",
+    "@types/react": "~18.3.1",
+    "esbuild": "^0.25.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.6.0"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  }
+}
